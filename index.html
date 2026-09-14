@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PETORIA — мир Пэтов</title>
+<style>
+:root{--bg:#17151f;--panel:#242131;--panel2:#302b42;--text:#fff;--muted:#aaa5bb;--accent:#ff8cc6;--accent2:#a98cff;--good:#8ee6b0;--danger:#ff7d91}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 20% 0%,#3a2547,transparent 35%),radial-gradient(circle at 100% 20%,#242d55,transparent 35%),var(--bg);color:var(--text);min-height:100vh}button{font:inherit;color:inherit;border:0;cursor:pointer}
+.app{max-width:900px;margin:auto;padding:14px 14px 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.logo{font-weight:900;font-size:24px;letter-spacing:2px}.logo small{display:block;font-size:10px;letter-spacing:1px;color:var(--muted);font-weight:600}.wallet{display:flex;gap:8px}.pill{background:#211e2c;border:1px solid #3b354e;padding:9px 12px;border-radius:18px;font-weight:800}
+.view{display:none}.view.active{display:block}.hero{background:linear-gradient(145deg,#33273e,#25243b);border:1px solid #4b4059;border-radius:28px;padding:24px;text-align:center;box-shadow:0 18px 50px #0004}.pet-stage{height:270px;display:flex;align-items:center;justify-content:center;position:relative}.pet{width:155px;height:155px;border-radius:44% 48% 42% 45%;background:linear-gradient(145deg,#f5b7d8,#c98fe2);position:relative;box-shadow:0 18px 30px #0005;animation:float 3s ease-in-out infinite}.pet:before,.pet:after{content:"";position:absolute;width:32px;height:45px;background:#d59ae4;border-radius:70% 30%;top:-20px}.pet:before{left:20px;transform:rotate(-28deg)}.pet:after{right:20px;transform:rotate(28deg)}.eye{position:absolute;width:25px;height:32px;background:#201c2b;border-radius:50%;top:52px}.e1{left:38px}.e2{right:38px}.mouth{position:absolute;width:30px;height:14px;border-bottom:5px solid #201c2b;border-radius:50%;left:62px;top:92px}.blush{position:absolute;width:25px;height:10px;border-radius:50%;background:#ef8eb4;top:88px;opacity:.7}.b1{left:18px}.b2{right:18px}@keyframes float{50%{transform:translateY(-9px) rotate(2deg)}}.energy-btn{margin:8px auto 0;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:15px 28px;border-radius:18px;font-weight:900;box-shadow:0 10px 25px #a98cff44}.energy-btn:active{transform:scale(.96)}.stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:16px 0}.cardgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:var(--panel);border:1px solid #3c374b;border-radius:22px;padding:16px}.case{min-height:150px;display:flex;flex-direction:column;justify-content:space-between}.case-icon{font-size:55px;text-align:center}.case h3{margin:4px 0}.muted{color:var(--muted);font-size:13px}.primary{background:linear-gradient(135deg,#ff7fbf,#9b84ff);padding:11px 14px;border-radius:13px;font-weight:800;width:100%}.secondary{background:#3a3548;padding:10px 13px;border-radius:12px}.nav{position:fixed;bottom:0;left:0;right:0;background:#181621ed;backdrop-filter:blur(16px);border-top:1px solid #3b3548;display:flex;justify-content:center;z-index:10}.navin{max-width:900px;width:100%;display:grid;grid-template-columns:repeat(5,1fr)}.nav button{background:transparent;padding:11px 4px;color:#9e98ad;font-size:11px}.nav button b{display:block;font-size:21px;margin-bottom:2px}.nav button.active{color:#fff}.section-title{font-size:25px;margin:10px 0 4px}.collection{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.pet-card{text-align:center;background:var(--panel);border:1px solid #3c374b;border-radius:20px;padding:16px}.mini-pet{width:85px;height:85px;border-radius:40%;margin:8px auto;background:linear-gradient(145deg,#f5b7d8,#c98fe2);position:relative}.mini-pet:before,.mini-pet:after{content:"";position:absolute;width:18px;height:28px;background:#d59ae4;top:-11px;border-radius:70% 30%}.mini-pet:before{left:12px;transform:rotate(-28deg)}.mini-pet:after{right:12px;transform:rotate(28deg)}.rarity{font-size:11px;font-weight:900;color:#ffb4d7;text-transform:uppercase;letter-spacing:1px}.locked{filter:grayscale(1);opacity:.45}.modal{position:fixed;inset:0;background:#090811d9;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.show{display:flex}.modalbox{width:min(520px,100%);background:#272333;border:1px solid #554967;border-radius:28px;padding:22px;text-align:center}.reveal{height:250px;display:flex;align-items:center;justify-content:center}.reveal .pet{animation:reveal 1.2s ease}.rarity-big{font-size:13px;font-weight:900;letter-spacing:2px;color:#ffb0d5}@keyframes reveal{0%{transform:scale(.1) rotate(-20deg);opacity:0}55%{transform:scale(1.18) rotate(8deg);opacity:1}100%{transform:scale(1)}}.tapbox{background:var(--panel);border-radius:24px;padding:24px;text-align:center}.tapcircle{width:190px;height:190px;margin:20px auto;border-radius:50%;background:radial-gradient(circle,#ffafd6,#9e8aff);display:flex;align-items:center;justify-content:center;font-size:45px;box-shadow:0 20px 50px #0005;user-select:none}.tapcircle:active{transform:scale(.93)}.game{background:var(--panel);border-radius:24px;padding:20px;text-align:center}.gamearea{height:300px;position:relative;overflow:hidden;background:linear-gradient(#3b3150,#201d2c);border-radius:18px;margin:15px 0}.runner{position:absolute;bottom:25px;left:30px;font-size:48px}.obstacle{position:absolute;bottom:25px;right:-40px;font-size:40px}.coin{position:absolute;font-size:27px}.hidden{display:none!important}@media(min-width:650px){.cardgrid,.collection{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="logo">PETORIA<small>странный мир маленьких существ</small></div><div class="wallet"><div class="pill">⚡ <span id="energy">1000</span></div><div class="pill">🪙 <span id="coins">0</span></div></div></header>
+
+<section id="home" class="view active">
+<div class="hero"><div class="pet-stage"><div class="pet"><i class="eye e1"></i><i class="eye e2"></i><i class="mouth"></i><i class="blush b1"></i><i class="blush b2"></i></div></div>
+<div class="rarity-big">ТВОЙ ПЭТ ДНЯ</div><h1 id="homePet">МУРК</h1><p class="muted">Он сегодня особенно рад тебя видеть.</p>
+<div class="stats"><div class="pill">🔥 Серия: <span id="streak">1</span></div><div class="pill">🏆 Рекорд: <span id="record">0</span></div></div>
+<button class="energy-btn" onclick="tapEnergy()">⚡ ЗАРЯДИТЬ ЭНЕРГИЮ</button><p class="muted">Тапай, собирай комбо и открывай кейсы.</p></div>
+<div class="cardgrid" style="margin-top:12px"><div class="card"><b>🌟 Пэт дня</b><p class="muted">Первый тап сегодня даёт бонус.</p></div><div class="card"><b>🎯 Цель</b><p class="muted">Собери 10 разных Пэтов.</p></div></div>
+</section>
+
+<section id="cases" class="view"><h2 class="section-title">🎁 Кейсы</h2><p class="muted">Чем дороже кейс, тем необычнее существа внутри.</p><div class="cardgrid">
+<div class="card case"><div class="case-icon">🌱</div><div><h3>Стартовый</h3><p class="muted">100 ⚡ · обычные Пэты</p></div><button class="primary" onclick="openCase(100,'Стартовый')">ОТКРЫТЬ</button></div>
+<div class="card case"><div class="case-icon">🍭</div><div><h3>Сладкий</h3><p class="muted">350 ⚡ · милые Пэты</p></div><button class="primary" onclick="openCase(350,'Сладкий')">ОТКРЫТЬ</button></div>
+<div class="card case"><div class="case-icon">🌙</div><div><h3>Ночной</h3><p class="muted">750 ⚡ · странные Пэты</p></div><button class="primary" onclick="openCase(750,'Ночной')">ОТКРЫТЬ</button></div>
+<div class="card case"><div class="case-icon">👑</div><div><h3>Королевский</h3><p class="muted">1500 ⚡ · шанс на Mythic</p></div><button class="primary" onclick="openCase(1500,'Королевский')">ОТКРЫТЬ</button></div>
+<div class="card case"><div class="case-icon">🌀</div><div><h3>Аномальный</h3><p class="muted">3000 ⚡ · шанс на ???</p></div><button class="primary" onclick="openCase(3000,'Аномальный')">ОТКРЫТЬ</button></div>
+</div></section>
+
+<section id="pets" class="view"><h2 class="section-title">👾 Моя коллекция</h2><p class="muted">Найдено: <span id="count">1</span> / 20</p><div id="collection" class="collection"></div></section>
+
+<section id="games" class="view"><h2 class="section-title">🎮 Мини-игры</h2><div class="game"><h2>⚡ Лови энергию</h2><p class="muted">Нажимай на появляющиеся сферы. 30 секунд.</p><div id="gamearea" class="gamearea"></div><button class="primary" onclick="startGame()">НАЧАТЬ ИГРУ</button><p>Собрано: <b id="gameScore">0</b> · Награда: <b id="gameReward">0</b> ⚡</p></div>
+<div class="card" style="margin-top:12px"><b>🐾 Пэт-ран</b><p class="muted">Скоро: бесконечный забег с ловушками и бонусами.</p></div></section>
+
+<section id="profile" class="view"><h2 class="section-title">👤 Профиль</h2><div class="card"><h3>Коллекционер</h3><p class="muted">Твоя прогрессия в PETORIA</p><p>👾 Пэты: <b id="pcount">1</b>/20</p><p>🎁 Кейсы: <b id="opened">0</b></p><p>⚡ Всего энергии: <b id="totalEnergy">1000</b></p></div><div class="card" style="margin-top:12px"><h3>🏆 Достижения</h3><p>🔒 Первый редкий — получи Rare</p><p>🔒 Коллекционер — собери 10 Пэтов</p><p>🔒 Невозможное — найди ???</p><p>🔒 Безумец — открой 100 кейсов</p></div><button class="secondary" style="margin-top:12px;width:100%" onclick="resetGame()">Сбросить прогресс</button></section>
+</div>
+
+<nav class="nav"><div class="navin">
+<button class="active" onclick="show('home',this)"><b>🏠</b>Главная</button><button onclick="show('cases',this)"><b>🎁</b>Кейсы</button><button onclick="show('pets',this)"><b>👾</b>Пэты</button><button onclick="show('games',this)"><b>🎮</b>Игры</button><button onclick="show('profile',this)"><b>👤</b>Профиль</button>
+</div></nav>
+
+<div id="modal" class="modal"><div class="modalbox"><div class="reveal"><div id="revealPet" class="pet"><i class="eye e1"></i><i class="eye e2"></i><i class="mouth"></i><i class="blush b1"></i><i class="blush b2"></i></div></div><div class="rarity-big" id="revealRarity"></div><h1 id="revealName"></h1><p id="revealDesc" class="muted"></p><button class="primary" onclick="closeModal()">ЗАБРАТЬ ПЭТА</button></div></div>
+
+<script>
+const pets=[
+['Мурк','Common','Серьёзно смотрит на мир, хотя сам не знает почему.'],['Грыз','Common','Большие зубы. Очень мягкое сердце.'],['Плюм','Unusual','Внутри него живёт маленькая звезда.'],['Мокко','Unusual','Меняет настроение быстрее, чем погоду.'],['Блим','Rare','Самый медленный Пэт во всей PETORIA.'],['Нулли','Rare','Иногда смотрит туда, где никого нет.'],['Флип','Rare','Умеет падать идеально красиво.'],['Тоби','Odd','Собирает потерянные пуговицы.'],['Крам','Odd','Не любит прямые линии.'],['Вулик','Epic','Всегда приходит с загадочным шорохом.'],['Скай','Epic','Утверждает, что умеет разговаривать с луной.'],['Рум','Epic','Его нельзя разбудить до полудня.'],['Фанти','Mythic','Появляется только рядом с удачными игроками.'],['Оми','Mythic','Никто не видел, как он моргает.'],['Зузи','Mythic','Хранит внутри себя целую маленькую комнату.'],['Кроу','???','Аномальный объект. Данные отсутствуют.'],['Эхо','???','Повторяет последние мысли своего владельца.'],['Люм','???','Светится, когда рядом открывается кейс.'],['Пикс','Odd','Иногда превращается в пиксели.'],['Буб','Unusual','Любит всё круглое и мягкое.']
+];
+let state=JSON.parse(localStorage.petoria||'null')||{energy:1000,coins:0,owned:[0],opened:0,totalEnergy:1000,record:0};
+const $=id=>document.getElementById(id);
+function save(){localStorage.petoria=JSON.stringify(state);update()}
+function update(){['energy','coins','opened','totalEnergy','record'].forEach(k=>$(k).textContent=state[k]);$('count').textContent=state.owned.length;$('pcount').textContent=state.owned.length;renderCollection()}
+function show(id,btn){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
+function tapEnergy(){let gain=1+Math.floor(Math.random()*3);state.energy+=gain;state.totalEnergy+=gain;if(Math.random()<.08){state.energy+=10;state.totalEnergy+=10;alert('⚡ SUPER TAP! +10 энергии')}save()}
+function rollCase(cost){let r=Math.random(), index;if(cost>=3000) index=r<.03?15+r%1*4|0:r<.15?12+r%3|0:r<.4?9+r%3|0:r<.7?5+r%4|0:Math.floor(Math.random()*9);
+else if(cost>=1500) index=r<.03?12+r%3|0:r<.18?9+r%3|0:r<.5?5+r%4|0:Math.floor(Math.random()*9);
+else if(cost>=750) index=r<.05?9+r%3|0:r<.35?5+r%4|0:Math.floor(Math.random()*9);
+else if(cost>=350) index=r<.08?5+r%4|0:Math.floor(Math.random()*9);
+else index=Math.floor(Math.random()*9); return index}
+function openCase(cost,type){if(state.energy<cost){alert('⚡ Не хватает энергии! Поиграй в мини-игры или потапай.');return}state.energy-=cost;state.opened++;let i=rollCase(cost);state.owned=[...new Set([...state.owned,i])];$('revealName').textContent=pets[i][0];$('revealRarity').textContent=pets[i][1]+' · '+type;$('revealDesc').textContent=pets[i][2];$('modal').classList.add('show');save()}
+function closeModal(){$('modal').classList.remove('show')}
+function renderCollection(){$('collection').innerHTML=pets.map((p,i)=>state.owned.includes(i)?`<div class="pet-card"><div class="mini-pet"></div><b>${p[0]}</b><div class="rarity">${p[1]}</div><p class="muted">${p[2]}</p></div>`:`<div class="pet-card locked"><div class="mini-pet"></div><b>???</b><div class="rarity">LOCKED</div><p class="muted">Открой кейс</p></div>`).join('')}
+let timer,gameRunning=false,score=0;
+function startGame(){if(gameRunning)return;gameRunning=true;score=0;$('gameScore').textContent=0;let area=$('gamearea');area.innerHTML='';let end=Date.now()+30000;
+function spawn(){if(!gameRunning)return;let c=document.createElement('button');c.className='coin';c.textContent=Math.random()<.08?'💎':'⚡';c.style.left=(8+Math.random()*84)+'%';c.style.top=(8+Math.random()*78)+'%';c.onclick=()=>{score+=c.textContent==='💎'?10:1;$('gameScore').textContent=score;c.remove()};area.appendChild(c);setTimeout(()=>c.remove(),900);if(Date.now()<end)setTimeout(spawn,Math.max(180,650-score*3));else finishGame()}
+spawn()}
+function finishGame(){gameRunning=false;let reward=Math.min(500,score*5);state.energy+=reward;state.totalEnergy+=reward;state.record=Math.max(state.record,score);$('gameReward').textContent=reward;save();alert('🎉 Игра окончена! +'+reward+' энергии.')}
+function resetGame(){if(confirm('Точно удалить весь прогресс?')){localStorage.removeItem('petoria');location.reload()}}
+update();
+</script>
+</body>
+</html>

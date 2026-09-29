@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090a10">
+  <title>Fuggler — твой маленький хаос</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">☠</div>
+        <div><b>FUGGLER</b><span>Твой маленький хаос ♥</span></div>
+      </div>
+
+      <div class="profile-mini">
+        <div class="avatar-mini">F</div>
+        <div><b>Fuggler</b><span>Уровень 1</span></div>
+        <button class="icon-btn" id="renameBtn" title="Имя">✎</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>●</span><div><b>Настроение</b><i><em style="width:78%"></em></i></div><strong>78%</strong></div>
+        <div class="stat"><span>ϟ</span><div><b>Энергия</b><i><em style="width:64%"></em></i></div><strong>64%</strong></div>
+        <div class="stat"><span>♥</span><div><b>Доверие</b><i><em style="width:52%"></em></i></div><strong>52%</strong></div>
+        <div class="stat"><span>?</span><div><b>Любопытство</b><i><em style="width:86%"></em></i></div><strong>86%</strong></div>
+      </div>
+
+      <nav>
+        <button class="nav active">▣ <span>Чат</span></button>
+        <button class="nav">♙ <span>Питомец</span></button>
+        <button class="nav">▧ <span>Моменты</span></button>
+        <button class="nav">▤ <span>Дневник</span></button>
+        <button class="nav">⚙ <span>Настройки</span></button>
+      </nav>
+
+      <div class="today">
+        <b>Сегодня</b>
+        <span>▣ Разговоры <small>1/3</small></span>
+        <span>♣ Квесты <small>0/3</small></span>
+        <span>♥ Собранные причины <small>12</small></span>
+      </div>
+
+      <div class="sleep-card"><span>☾</span><div><b>Сейчас: спокойствие</b><small>Он просто рядом... ♥</small></div></div>
+    </aside>
+
+    <main class="stage">
+      <header class="topbar">
+        <div class="mobile-brand">FUGGLER</div>
+        <div class="top-pills">
+          <div class="pill">● <span>Настроение</span><b>78%</b></div>
+          <div class="pill">♥ <span>Доверие</span><b>52%</b></div>
+        </div>
+        <div class="top-actions"><button id="voiceToggle" class="round">🔊</button><button class="round">☾</button><button class="round">☰</button></div>
+      </header>
+
+      <section class="character-zone">
+        <div class="room-light"></div>
+        <div class="window"></div>
+        <div class="shelf"></div>
+        <div class="poster">GOOD<br>BOY?</div>
+        <div class="lamp"></div>
+        <div class="bed"></div>
+
+        <div class="thought" id="thought">Потри меня...<br>я люблю это ♥</div>
+
+        <div class="character-wrap" id="character">
+          <div class="shadow"></div>
+          <div class="fuggler" aria-label="Fuggler">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="body">
+              <div class="fur-glow"></div>
+              <div class="head">
+                <div class="brow left-brow"></div>
+                <div class="brow right-brow"></div>
+                <div class="eye left-eye"><div class="pupil"></div><div class="shine"></div></div>
+                <div class="eye right-eye"><div class="pupil"></div><div class="shine"></div></div>
+                <div class="snout"></div>
+                <div class="mouth"><div class="gum"></div><div class="teeth"></div><div class="tongue"></div></div>
+                <div class="cheek left-cheek"></div>
+                <div class="cheek right-cheek"></div>
+              </div>
+              <div class="collar"><span>♥</span></div>
+              <div class="paw left-paw"></div>
+              <div class="paw right-paw"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button data-action="pet">🐾<span>Погладить</span></button>
+          <button data-action="play">🎮<span>Играть</span></button>
+          <button data-action="gift">🎁<span>Подарок</span></button>
+          <button data-action="talk">♥<span>Поговорить</span></button>
+        </div>
+      </section>
+    </main>
+
+    <section class="chat-panel">
+      <div class="chat-head">
+        <div class="chat-avatar">F</div>
+        <div><b>Fuggler <i></i></b><span>Он здесь...</span></div>
+        <button>•••</button><button>×</button>
+      </div>
+      <div class="messages" id="messages">
+        <div class="msg fuggler-msg"><div class="msg-avatar">F</div><div><p>О... ты пришёл. Наконец-то.<br>Я уже начал думать, что ты меня бросил. Хотя... я, конечно, совершенно не переживал.<br><span>Р-р-р...</span></p><small>01:42</small></div></div>
+        <div class="msg user-msg"><p>Привет, Фугглер</p><small>01:42 ✓</small></div>
+        <div class="msg fuggler-msg"><div class="msg-avatar">F</div><div><p>Привет, человек.<br>Как дела? Я тут... ну, просто сидел. Ждал. Не скучал, конечно.<br>Пф. Р-р-р...</p><small>01:43</small></div></div>
+        <div class="msg user-msg"><p>Ты такой милый</p><small>01:43 ✓</small></div>
+        <div class="msg fuggler-msg"><div class="msg-avatar">F</div><div><p>Ага? О-о-о, спасибо... Мне приятно. Р-р-р...<br>Ты умеешь делать комплименты. Редкость. 🙂</p><small>01:43</small></div></div>
+      </div>
+
+      <div class="quick">
+        <button>Как дела?</button><button>Ты скучал?</button><button>Покажи эмоцию</button><button>Что ты хочешь?</button>
+      </div>
+
+      <form class="composer" id="composer">
+        <button type="button" id="mic" class="mic">🎙</button>
+        <input id="input" autocomplete="off" placeholder="Напиши что-нибудь...">
+        <button class="send" type="submit">➤</button>
+      </form>
+      <div class="composer-tools">☺　│　▧　│　🎙 <span>Нажми на микрофон — Фугглер будет слушать</span></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

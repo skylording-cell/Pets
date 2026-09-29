@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fuggler — мой странный питомец</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <main class="stage">
+    <div class="top"><span class="status-dot"></span><span id="moodLabel">Fuggler бодрствует</span></div>
+    <div class="scene">
+      <div class="glow"></div>
+      <img id="fuggler" src="fuggler.png" alt="Fuggler">
+      <div id="thought" class="thought">ррр... кто пришёл?</div>
+      <div id="fx" class="fx"></div>
+    </div>
+    <div class="stats">
+      <span>❤️ <b id="trust">35</b></span>
+      <span>⚡ <b id="energy">72</b></span>
+      <span>👀 <b id="curiosity">82</b></span>
+    </div>
+  </main>
+
+  <section class="chat">
+    <div id="messages" class="messages">
+      <div class="msg bot"><b>Fuggler</b><br>О... ты пришёл. Ррр... Я уже начал думать, что ты меня бросил.</div>
+    </div>
+    <form id="form" class="composer">
+      <input id="input" maxlength="280" autocomplete="off" placeholder="Напиши Fuggler..." />
+      <button aria-label="Отправить">➤</button>
+    </form>
+    <div class="quick">
+      <button data-q="Привет, Fuggler">Привет</button>
+      <button data-q="Как ты?">Как ты?</button>
+      <button data-q="Я тебя люблю">Обнять</button>
+      <button data-q="Расскажи секрет">Секрет</button>
+    </div>
+    <button id="voiceToggle" class="voice">🔊 Голос: включён</button>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
